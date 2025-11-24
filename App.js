@@ -1,20 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { GameCard } from './src/components/GameCard';
 
 export default function App() {
+
+  const cardOnPress = (routerRouter) => {
+    alert(`${routerRouter}`)
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <GameCard title="game1" imageUrl="#" onPress={() => cardOnPress('Game1')}/>
+      <GameCard title="game2" imageUrl="#" onPress={() => cardOnPress('Game2')}/>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
